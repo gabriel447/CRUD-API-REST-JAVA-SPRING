@@ -30,14 +30,14 @@ public class ProductController {
     }
 
     //buscar apenas um produto e com exceção
-    @GetMapping("/employees/{id}")
+    @GetMapping("/products/{id}")
     Product one(@PathVariable Long id) {
         return repository.findById(id)
                 .orElseThrow(() -> new ProductNotFoundException(id));
     }
 
     //atualizar produto
-    @PutMapping("/employees/{id}")
+    @PutMapping("/products/{id}")
     Product replaceProduct(@RequestBody Product newProduct, @PathVariable Long id) {
 
         return repository.findById(id)
